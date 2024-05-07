@@ -22,7 +22,7 @@ OS release information is gotten by using the command
 
 ```cat /etc/os_release``` 
 
-Package manager information is gotten using the command:
+Package manager information is gotten using the command
 
 ```which apt```
 
