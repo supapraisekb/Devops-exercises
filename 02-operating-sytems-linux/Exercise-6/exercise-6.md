@@ -34,38 +34,39 @@ It will give you a warning about LOG_DIR variable not set. You can ignore it for
 ```bash
 #!/bin/bash
 
-export NODE_VERSION=$(node -v)
-export NPM_VERSION=$(npm -v)
+# Install Node.js and NPM
+echo "Installing Node.js and NPM..."
+sudo apt-get update
+sudo apt-get install -y nodejs npm
+
+# Print installed Node.js and NPM versions
+echo "Node.js version:"
+node --version
+echo "NPM version:"
+npm --version
+
+# Download artifact file
+echo "Downloading artifact file..."
+curl -O https://node-envvars-artifact.s3.eu-west-2.amazonaws.com/bootcamp-node-envvars-project-1.0.0.tgz
+
+# Unzip downloaded file
+echo "Unzipping downloaded file..."
+tar -zxvf bootcamp-node-envvars-project-1.0.0.tgz
+
+# Set environment variables
 export APP_ENV=dev
 export DB_USER=myuser
 export DB_PWD=mysecret
-# First we want to download and install nodejs from official repo
 
-curl -O https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh
+# Change into the unzipped package directory
+cd bootcamp-node-envvars-project-1.0.0
 
-# Install the script above and source the shell
-bash install.sh
-
-source ~/.bashrc
-
-# Install the node package manager NVM
-nvm install 20
-
-echo "You have installed this version of NodeJS: $NODE_VERSION"
-echo "You have also installed this version of NPM: $NPM_VERSION"
-
-# Download and extract the Bootcamp NodeJS App
-wget https://node-envvars-artifact.s3.eu-west-2.amazonaws.com/bootcamp-node-envvars-project-1.0.0.tgz
-
-tar -xvzf bootcamp-node-envvars-project-1.0.0.tgz
-
-#Change to application folder
-
-cd package/
-#Install NPM dependencies
+# Run the Node.js application
+echo "Running Node.js application..."
 npm install
-
-#Run NODEJS App
 node server.js &
+
+echo "Node.js application is running in the background."
+
 
 ```
