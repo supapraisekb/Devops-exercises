@@ -6,7 +6,7 @@ You’ve been running the application with your user. But we need to adjust that
 
 ```bash
 
-#!/bin/bash
+!/bin/bash
 
 # Check if Node.js and NPM are already installed
 if ! command -v node &>/dev/null || ! command -v npm &>/dev/null; then
@@ -22,8 +22,8 @@ echo "NPM version: $(npm --version)"
 # Download the application
 echo "Downloading the application..."
 wget -qO- https://node-envvars-artifact.s3.eu-west-2.amazonaws.com/bootcamp-node-envvars-project-1.0.0.tgz | tar -xvzf -
-
 # Set LOG_DIR environment variable
+LOG_DIRECTORY="path/to/directory/package"  # Specify your desired log directory path here
 if [ -d "$LOG_DIRECTORY" ]; then
     echo "LOG_DIR already exists."
 else
@@ -31,6 +31,9 @@ else
     echo "LOG_DIR has been created at: $LOG_DIRECTORY"
 fi
 export LOG_DIR="$(realpath "$LOG_DIRECTORY")"
+
+# Change directory to the extracted package
+cd package || exit
 
 # Create a new user to run the application
 NEW_USER=myapp
@@ -47,22 +50,23 @@ export APP_ENV=dev
 export DB_USER=myuser
 export DB_PWD=mysecret
 
-# Install dependencies and start the application
+# Install dependencies
 echo "Installing dependencies..."
 npm install
 
 # Start the application as the new user in the background
 echo "Starting the application..."
-sudo -u "$NEW_USER" sh -c 'cd "$LOG_DIR"; node server.js &' 
+sudo -u "$NEW_USER" sh -c 'cd "$LOG_DIR/package"; node server.js &'
 
 # Wait for a moment to ensure the application has started
 sleep 10
 
 # Check if the application is running
 if pgrep -fu "$NEW_USER" -f "node server.js" &>/dev/null; then
+
     echo "Node.js application is running."
     echo "Checking app.log file in $LOG_DIR directory:"
-    sudo -u "$NEW_USER" cat "$LOG_DIR/app.log" 2>/dev/null || echo "app.log file not found."
+    sudo -u "$NEW_USER" cat "$LOG_DIR/package/app.log" 2>/dev/null || echo "app.log file not found."
 else
     echo "Failed to start Node.js application."
 fi
