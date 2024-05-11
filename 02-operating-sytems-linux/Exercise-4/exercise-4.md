@@ -7,11 +7,6 @@ Extend the previous script to ask for a user input for sorting the processes out
 #!/bin/bash
 
 # Show the current user information
-echo "The current user for this session is : $USER"
-
-#!/bin/bash
-
-# Show the current user information
 
 echo "The current user for this session is: $USER"
 

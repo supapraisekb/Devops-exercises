@@ -4,7 +4,7 @@ Write a bash script using Vim editor that installs the latest java version and c
 
 Below is the code for the script to perform this task:
 
-```
+```bash
  #!/bin/bash/
 
    # Install java application                                                                         
