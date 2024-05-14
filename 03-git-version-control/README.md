@@ -2,7 +2,9 @@
 
 Use repository: 
 
-``` https://gitlab.com/devops-bootcamp3/git-project
+```
+ https://gitlab.com/devops-bootcamp3/git-project
+
 ```
 
 ## EXERCISE 1: Clone and create new repository

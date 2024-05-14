@@ -1,0 +1,18 @@
+## Task
+
+_Exercises for Module "Version Control with Git"_
+_Use repository: https://gitlab.com/devops-bootcamp3/git-project_ 
+
+
+## EXERCISE 1: Clone and create new repository
+
+Clone git repository, creating a new local copy and Push it to your own Gitlab remote repository
+
+## SOLUTION
+
+The repo was clone to my Exercise-1 directory on my local machine using the the command:
+
+```bash 
+git clone https://gitlab.com/devops-bootcamp3/git-project_ 
+
+```
