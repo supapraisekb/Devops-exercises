@@ -28,4 +28,9 @@ To edit the logstash-logback-encoder file, I navigated to ``git-project`` and ed
 
 To edit the index.html file I navigated to the ``git-project/src/main/webapp`` folder and edited the file using the vim editor
 
-I pushed the changed to github
+I pushed the branch to github using the command 
+
+```git 
+  git push --set-upstream origin feature-exercise-3
+
+  ```
