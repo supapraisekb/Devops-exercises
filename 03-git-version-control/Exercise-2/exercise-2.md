@@ -13,7 +13,7 @@ In the Project root folder, I created a file named ``.gitignore``
 
 In thi file i added the following lines
 
-```
+```git
 .idea/*
 .DS_Store*
 build/*
@@ -21,7 +21,7 @@ build/*
 ```
 To remove the already cached .idea folder, i used the command
 
-```
+```git
 git rm -r --cached .idea 
 
 ```
