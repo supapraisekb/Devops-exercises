@@ -23,4 +23,6 @@ git pull -r
 
 ![git merge conflic](/assets/Merge-conflict.JPG)
 
-4. I resolved the confilct and pushed the chaged to the remote repo
+4. I resolved the confilct in the editor and pushed the chaged to the remote repo
+
+
