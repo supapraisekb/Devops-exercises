@@ -38,5 +38,4 @@ git add .
 git commit -m "pushed the merged commits"
 git push
 ```
-
-switched back to
+END
