@@ -71,7 +71,7 @@ Your team members tell you the previous image was the correct one, so you want t
 you already pushed to remote, you must revert the change.
 Revert the last commit and push your changes to remote repository
 
-##EXERCISE 8: Reset commit
+## EXERCISE 8: Reset commit
 
 You found 1 last thing you think must be fixed. Bruno just moved to DevOps team, so Bruno’s role must
 be fixed.
@@ -81,7 +81,7 @@ However after talking to a colleague, you find out it has already been fixed in 
 want to undo your local commit.
 Since commit is only locally, you can reset the commit.
 
-##EXERCISE 9: Merge
+## EXERCISE 9: Merge
 
 This time you want to merge your branch directly into master without merge request. So:
 merge your bugfix branch into master using git CLI (Hint: master branch must be up-to-date
